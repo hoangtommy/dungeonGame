@@ -1,0 +1,1 @@
+Basic text game practicing object oriented programming using ruby
