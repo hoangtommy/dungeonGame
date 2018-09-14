@@ -1,1 +1,1 @@
-Basic text game practicing object oriented programming using ruby
+A few exercises and fun programs to practice object oriented programming principles
