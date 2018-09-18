@@ -19,23 +19,31 @@ class Seasons
 	end
 
 	def add_day(date, resort)
-		#add resort to list of mountains if it's not already there
-		#add date to resort, count total days at that resort
-		@resort
-		@mountains[resort] = date #this will replace the previous date, need to keep running log of all days at a resort
+		if @mountains.include? resort 
+			@mountains[resort] << date
+		else
+			@mountains[resort] ||= [date]
+		end
 		@season_total += 1
 		puts "you rode #{resort} on #{date}"
+		puts "#{resort} total: #{@mountains[resort].size}"
+	end
+
+	def display
 		display_total
 	end
 
 	protected
 
 	def display_total
+		puts "All resorts: #{@mountains.keys}"
 		puts "#{@year}-#{@year+1} season: #{@season_total} days"
 	end
 end
 
 year1 = Seasons.new(2017)
 year1.add_day("11/15/17", "Northstar")
+year1.add_day("12/1/17", "Kirkwood")
 year1.add_day("12/1/17", "Northstar")
-puts year1.mountains
+year1.add_day("1/2/18", "Whistler")
+year1.display
