@@ -1,7 +1,7 @@
 module Stuff
-	def greeting
-		puts "sup world! I'm from the bench!"
-	end
+  def greeting
+    puts "sup world! I'm from the bench!"
+  end
 end
 
 class Person
@@ -12,12 +12,12 @@ class Person
 	end
 
 	def each
-		idx = 0
-		while idx < self.size
-			yield(idx)
-			idx += 1
-		end
-		self
+	  idx = 0
+	  while idx < self.size
+	    yield(idx)
+		  idx += 1
+	  end
+	    self
 	end
 
 	def days
@@ -36,7 +36,6 @@ class Person
 	# protected :days
 end
 
-tod = Person.new([1,2,3])
+tod = Person.new([1, 2, 3])
 ted = Person.new(30)
-
-puts tod.days.map {|item| item * item}
+puts tod.days.map { |item| item * item }
